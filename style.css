@@ -693,6 +693,13 @@ textarea.form-control {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
+/* Ikon Material Symbols di tombol tema */
+.btn-theme-toggle .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+  vertical-align: -3px;
+}
+
 /* Pengaturan Visibilitas Foto Profil (About) */
 .foto-wrapper {
   display: flex;

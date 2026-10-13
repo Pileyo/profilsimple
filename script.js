@@ -61,16 +61,16 @@ function toggleDarkMode() {
     updateDarkModeButton(isDark);
 }
 
-// DOM manipulation: mengubah teks tombol sesuai tema aktif.
+// DOM manipulation: mengubah teks dan ikon tombol sesuai tema aktif.
 function updateDarkModeButton(isDark) {
     const btnDarkMode = document.getElementById("btn-dark-mode");
     if (!btnDarkMode) return;
 
     if (isDark) {
-        btnDarkMode.textContent = "Light";
+        btnDarkMode.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">light_mode</span> Light';
         btnDarkMode.setAttribute("aria-label", "Beralih ke Light Mode");
     } else {
-        btnDarkMode.textContent = "Dark";
+        btnDarkMode.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">dark_mode</span> Dark';
         btnDarkMode.setAttribute("aria-label", "Beralih ke Dark Mode");
     }
 }
