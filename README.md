@@ -16,9 +16,7 @@ Website profil pribadi ini dibuat sebagai tugas UTS Pemrograman Web. Website ter
 ## Cara Melihat Website
 
 ### Online (GitHub Pages)
-Kunjungi: **https://[USERNAME].github.io/[NAMA-REPO]/**
-
-*(Ganti `[USERNAME]` dengan username GitHub Anda dan `[NAMA-REPO]` dengan nama repositori)*
+Kunjungi: **https://pileyo.github.io/profilsimple/**
 
 ### Lokal
 
@@ -225,11 +223,9 @@ git init
 git add .
 git commit -m "Upload tugas UTS Pemrograman Web"
 git branch -M main
-git remote add origin https://github.com/[USERNAME]/[NAMA-REPO].git
+git remote add origin https://github.com/Pileyo/profilsimple.git
 git push -u origin main
 ```
-
-*(Ganti `[USERNAME]` dan `[NAMA-REPO]` dengan akun dan nama repo Anda)*
 
 ---
 
