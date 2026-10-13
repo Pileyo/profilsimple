@@ -246,7 +246,7 @@ Kebutuhan fungsional menjelaskan fitur-fitur yang harus ada di website sesuai so
 **Deskripsi:** Dokumentasi tertulis menjelaskan cara melihat website, struktur HTML, desain CSS, fungsionalitas JavaScript, dan kebutuhan sistem.
 
 **Detail:**
-- `README.md` berisi: judul project, nama & NIM, deskripsi, cara melihat website (link GitHub Pages + cara lokal), penjelasan struktur HTML, penjelasan desain CSS, penjelasan fungsionalitas JavaScript, struktur folder, cara validasi, cara aktifkan GitHub Pages.
+- `README.md` berisi: judul project, nama & NIM, deskripsi, cara melihat website (link GitHub Pages + cara lokal), struktur HTML, desain CSS, fungsionalitas JavaScript, struktur folder, cara validasi, cara aktifkan GitHub Pages.
 - `SRS.md` berisi: pendahuluan (tujuan, ruang lingkup), deskripsi umum (pengguna, batasan), kebutuhan fungsional (FR-01 sampai FR-10), kebutuhan non-fungsional (NFR-01 sampai NFR-05).
 
 **Kriteria Penerimaan:**
