@@ -1,10 +1,10 @@
 # Software Requirements Specification (SRS)
 ## Website Profil Pribadi - Tugas UTS Pemrograman Web
 
-**Nama Project:** Website Profil Pribadi Leo  
+**Nama Project:** Website Profil Pribadi Pileyo Hananim Zamonokhi Bate'e  
 **Versi:** 1.0  
 **Tanggal:** 13 Oktober 2026  
-**Pembuat:** Leo - NIM [NIM]
+**Pembuat:** Pileyo Hananim Zamonokhi Bate'e - NIM 25091397045
 
 ---
 
@@ -393,7 +393,7 @@ Kebutuhan non-fungsional menjelaskan kualitas dan performa yang harus dipenuhi w
 
 ## 7. Penutup
 
-Dokumen SRS ini menjelaskan seluruh kebutuhan fungsional dan non-fungsional website profil pribadi Leo yang dibuat sebagai tugas UTS Pemrograman Web. Implementasi website harus memenuhi seluruh kebutuhan yang tercantum di dokumen ini agar lolos penilaian.
+Dokumen SRS ini menjelaskan seluruh kebutuhan fungsional dan non-fungsional website profil pribadi Pileyo Hananim Zamonokhi Bate'e yang dibuat sebagai tugas UTS Pemrograman Web. Implementasi website harus memenuhi seluruh kebutuhan yang tercantum di dokumen ini agar lolos penilaian.
 
 **Referensi:**
 - Soal UTS Pemrograman Web (ringkasan resmi dari dosen).
@@ -403,6 +403,6 @@ Dokumen SRS ini menjelaskan seluruh kebutuhan fungsional dan non-fungsional webs
 
 ---
 
-**Pembuat Dokumen:** Leo - NIM [NIM]  
+**Pembuat Dokumen:** Pileyo Hananim Zamonokhi Bate'e - NIM 25091397045  
 **Tanggal:** 13 Oktober 2026  
 **Versi:** 1.0 (Final)

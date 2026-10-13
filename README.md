@@ -1,7 +1,7 @@
 # Website Profil Pribadi - Tugas UTS Pemrograman Web
 
-**Nama:** Pileyo Hananim Zamonokhi Bate'e
-**NIM:** 25091397045 
+**Nama:** Pileyo Hananim Zamonokhi Bate'e  
+**NIM:** 25091397045  
 **Mata Kuliah:** Pemrograman Web - Semester 3  
 **Program Studi:** Manajemen Informatika
 
@@ -247,4 +247,4 @@ git push -u origin main
 
 ## Lisensi
 
-© 2026 Leo. Seluruh hak cipta dilindungi. Project ini dibuat untuk keperluan tugas UTS Pemrograman Web.
+© 2026 Pileyo Hananim Zamonokhi Bate'e. Seluruh hak cipta dilindungi. Project ini dibuat untuk keperluan tugas UTS Pemrograman Web.
