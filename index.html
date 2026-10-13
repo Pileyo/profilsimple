@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo - Profil Pribadi & Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigasi utama (Flexbox) -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">Leo<span>.Portfolio</span></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+                <li>
+                    <button id="btn-dark-mode" class="btn-theme-toggle" type="button" aria-label="Beralih ke Dark Mode">Dark</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Header halaman: judul + deskripsi singkat (syarat soal UTS) -->
+        <header class="page-header">
+            <h1>Beranda</h1>
+            <p>Selamat datang di website profil dan mini portofolio saya. Lihat ringkasan diri saya dan daftar proyek di bawah ini.</p>
+        </header>
+
+        <!-- Bagian Profil (Hero Halaman Beranda) -->
+        <section id="profil">
+            <img src="foto.jpg" alt="Foto Profil Leo" class="foto-profil">
+            <div class="profil-info">
+                <span class="badge-status">Mahasiswa Manajemen Informatika</span>
+                <h2>Leo</h2>
+                <p class="intro-text">
+                    Selamat datang di website profil dan mini portofolio saya. Saya fokus mempelajari pengembangan
+                    antarmuka web yang bersih, terstruktur, dan responsif.
+                </p>
+
+                <div class="btn-group">
+                    <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+                    <a href="about.html" class="btn btn-outline">Biodata Lengkap</a>
+                    <a href="contact.html" class="btn btn-outline">Hubungi Saya</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Proyek (Grid 3 Card Portofolio) -->
+        <section id="proyek">
+            <h2>Proyek Portofolio</h2>
+            <div class="projects-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Halaman Profil Pribadi</h3>
+                        <p class="card-desc">
+                            Membangun struktur web profil lengkap dengan foto ber-border-radius, biodata terstruktur,
+                            dan tautan sosial media.
+                        </p>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Styling</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Layout Flexbox & Grid</h3>
+                        <p class="card-desc">
+                            Penerapan tata letak navbar dengan Flexbox serta susunan galeri portofolio dengan CSS Grid
+                            multi-kolom.
+                        </p>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Flexbox</span>
+                        <span class="tag">CSS Grid</span>
+                        <span class="tag">Layout</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Desain Web Responsif</h3>
+                        <p class="card-desc">
+                            Penyesuaian tata letak otomatis untuk berbagai ukuran layar perangkat, mulai dari desktop,
+                            tablet, hingga smartphone.
+                        </p>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Media Queries</span>
+                        <span class="tag">Responsive</span>
+                        <span class="tag">Mobile</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Leo. Seluruh hak cipta dilindungi. Tugas Pemrograman Web.</p>
+    </footer>
+
+    <!-- Script Logika JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

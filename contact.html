@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Leo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi utama (Flexbox) -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">Leo<span>.Portfolio</span></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="contact.html" class="active">Kontak</a></li>
+                <li>
+                    <button id="btn-dark-mode" class="btn-theme-toggle" type="button" aria-label="Beralih ke Dark Mode">Dark</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Header halaman: judul + deskripsi singkat (syarat soal UTS) -->
+        <header class="page-header">
+            <h1>Hubungi Saya</h1>
+            <p>Jika Anda memiliki pertanyaan, tawaran proyek, atau ingin berdiskusi, silakan kirimkan pesan melalui formulir di bawah ini.</p>
+        </header>
+
+        <section id="contact-section">
+            <!-- Formulir Kontak (nama, email, pesan) -->
+            <form id="form-pesan" novalidate>
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" class="form-control" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="contoh@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" class="form-control" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+
+                <!-- Feedback Pengiriman Pesan (Manipulasi DOM) -->
+                <div id="status-pesan" role="status" aria-live="polite"></div>
+            </form>
+
+            <!-- Informasi Kontak & Sosial Media -->
+            <div class="contact-info-card">
+                <h2>Informasi Tambahan</h2>
+
+                <div class="contact-item">
+                    <span class="contact-label">Email Langsung</span>
+                    <span class="contact-value"><a href="mailto:leo@example.com">leo@example.com</a></span>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-label">Status Akademik</span>
+                    <span class="contact-value">Mahasiswa Aktif</span>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-label">Media Sosial</span>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn">Instagram</a>
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-btn">GitHub</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Leo. Seluruh hak cipta dilindungi. Tugas Pemrograman Web.</p>
+    </footer>
+
+    <!-- Script Logika JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Leo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi utama (Flexbox) -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">Leo<span>.Portfolio</span></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html" class="active">Tentang Kami</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+                <li>
+                    <button id="btn-dark-mode" class="btn-theme-toggle" type="button" aria-label="Beralih ke Dark Mode">Dark</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Header halaman: judul + deskripsi singkat (syarat soal UTS) -->
+        <header class="page-header">
+            <h1>Tentang Saya</h1>
+            <p>Halaman ini berisi perkenalan, biodata, daftar skill, dan tautan media sosial saya.</p>
+        </header>
+
+        <!-- Halaman About: Menggunakan Flexbox (.about-flex) -->
+        <section id="about-section" class="about-flex">
+            <!-- Kontainer Foto Profil & Tombol Pengatur Visibilitas -->
+            <div class="foto-wrapper">
+                <img src="foto.jpg" alt="Foto Profil Leo" class="foto-profil" id="foto-profil">
+                <div class="foto-actions">
+                    <button type="button" id="btn-sembunyi" class="btn btn-sm btn-outline">Sembunyikan Foto</button>
+                    <button type="button" id="btn-tampil" class="btn btn-sm btn-primary">Tampilkan Foto</button>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <h2>Leo</h2>
+                <p>
+                    Halo, perkenalkan saya Leo. Saya adalah mahasiswa Program Studi Manajemen Informatika yang sedang menempuh perkuliahan Pemrograman Web. Saya antusias mendalami pembuatan website modern yang fungsional dan terstruktur.
+                </p>
+
+                <!-- Biodata Lengkap (Nama, NIM, Jurusan, Hobi) -->
+                <div class="biodata-grid">
+                    <div class="biodata-label">Nama Lengkap</div>
+                    <div class="biodata-value">: Leo</div>
+
+                    <div class="biodata-label">NIM</div>
+                    <div class="biodata-value">: [NIM]</div>
+
+                    <div class="biodata-label">Jurusan</div>
+                    <div class="biodata-value">: Manajemen Informatika</div>
+
+                    <div class="biodata-label">Hobi</div>
+                    <div class="biodata-value">: Coding, Membaca Buku, dan Bermain Game</div>
+                </div>
+
+                <!-- Daftar skill, diisi lewat JavaScript (AJAX dari data.json) -->
+                <h3>Skill Saya</h3>
+                <p>Daftar skill berikut dimuat otomatis dari file data.json memakai fetch().</p>
+                <ul id="daftar-skill" class="skill-list">
+                    <li class="skill-loading">Memuat data skill...</li>
+                </ul>
+
+                <h3>Tautan & Media Sosial</h3>
+                <p>Silakan terhubung dengan saya melalui kontak atau akun media sosial berikut:</p>
+
+                <div class="social-links">
+                    <a href="mailto:leo@example.com" class="social-btn">Email: leo@example.com</a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn">Instagram: @leo</a>
+                    <a href="https://github.com" target="_blank" rel="noopener" class="social-btn">GitHub: @leo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Leo. Seluruh hak cipta dilindungi. Tugas Pemrograman Web.</p>
+    </footer>
+
+    <!-- Script Logika JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

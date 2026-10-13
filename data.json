@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nama": "HTML5 & Struktur Web Semantik",
+    "tingkat": "Menengah",
+    "deskripsi": "Mampu membuat halaman web dengan elemen semantik seperti header, nav, main, section, dan footer."
+  },
+  {
+    "id": 2,
+    "nama": "CSS3 & Layout Responsif",
+    "tingkat": "Menengah",
+    "deskripsi": "Menerapkan Flexbox, CSS Grid, media queries, serta variabel CSS untuk tampilan yang responsif."
+  },
+  {
+    "id": 3,
+    "nama": "JavaScript Dasar",
+    "tingkat": "Pemula",
+    "deskripsi": "Memahami event handling, manipulasi DOM, validasi form, dan pengambilan data dengan fetch API."
+  },
+  {
+    "id": 4,
+    "nama": "Desain UI/UX Sederhana",
+    "tingkat": "Pemula",
+    "deskripsi": "Mendesain antarmuka yang bersih, konsisten, dan mudah dibaca oleh pengguna."
+  },
+  {
+    "id": 5,
+    "nama": "Version Control dengan Git",
+    "tingkat": "Pemula",
+    "deskripsi": "Menggunakan Git untuk menyimpan versi project dan mengunggahnya ke GitHub."
+  }
+]

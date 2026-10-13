@@ -1,0 +1,907 @@
+/* =========================
+   1. VARIABEL & RESET
+   ========================= */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --text: #0f172a;
+  --muted: #475569;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #cbd5e1;
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 20px rgba(15, 23, 42, 0.08);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gunakan font bawaan sistem agar loading cepat dan tidak terlihat "dari generator" */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   2. TIPOGRAFI & UMUM
+   ========================= */
+h1,
+h2,
+h3 {
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 999px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button,
+.btn {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* =========================
+   3. LAYOUT UTAMA
+   ========================= */
+header {
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.12);
+}
+
+main {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 32px 0;
+  flex: 1;
+}
+
+footer {
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 24px 20px;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   3b. PAGE HEADER (judul + deskripsi tiap halaman)
+   Header di dalam main, tanpa background gelap seperti navbar.
+   ========================= */
+.page-header {
+  background: transparent;
+  position: static;
+  box-shadow: none;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* =========================
+   4. NAVBAR
+   ========================= */
+.navbar {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-brand span {
+  color: #60a5fa;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 8px;
+}
+
+.nav-menu a {
+  display: inline-block;
+  color: #cbd5e1;
+  padding: 10px 16px;
+  min-height: 44px;
+  line-height: 24px;
+  border-radius: 6px;
+}
+
+.nav-menu a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-menu a.active {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+/* =========================
+   5. HOME HERO
+   ========================= */
+#profil,
+.about-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px;
+}
+
+#profil {
+  margin-bottom: 40px;
+}
+
+#profil .foto-profil,
+#about-section .foto-profil {
+  width: 160px;
+  height: 160px;
+  min-width: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
+}
+
+.badge-status {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 22px;
+}
+
+.btn-outline:hover {
+  background: var(--primary-light);
+  color: var(--primary-hover);
+}
+
+/* =========================
+   6. PROJECT CARD
+   ========================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: #94a3b8;
+}
+
+.card-header {
+  margin-bottom: 12px;
+}
+
+.card-title {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.card-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.tag {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* =========================
+   7. ABOUT PAGE
+   ========================= */
+.about-content {
+  flex: 1;
+}
+
+.biodata-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px 16px;
+  margin: 20px 0;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.biodata-label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.biodata-value {
+  color: var(--text);
+}
+
+/* Daftar skill (diisi lewat AJAX dari data.json) */
+.skill-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 24px;
+  padding: 0;
+}
+
+.skill-item {
+  background: var(--primary-light);
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.skill-item h4 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.skill-item .skill-tingkat {
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.skill-item p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.skill-loading,
+.skill-error {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 16px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.skill-error {
+  color: #dc2626;
+}
+
+/* =========================
+   8. CONTACT PAGE
+   ========================= */
+#contact-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+}
+
+#form-pesan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.form-control {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 16px;
+  font: inherit;
+  color: var(--text);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#status-pesan {
+  display: none;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+#status-pesan.sukses {
+  display: block;
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+#status-pesan.error {
+  display: block;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.form-control.input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
+}
+
+.contact-info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.contact-value {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.social-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* =========================
+   9. RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  #contact-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-flex {
+    gap: 24px;
+    padding: 28px;
+  }
+
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-menu a {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  main {
+    width: min(100% - 20px, 1080px);
+    padding: 20px 0;
+  }
+
+  #profil {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+  }
+
+  .biodata-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 8px;
+  }
+
+  #form-pesan,
+  .contact-info-card {
+    padding: 20px 16px;
+  }
+}
+
+/* ==========================================================================
+   10. INTERAKSI JAVASCRIPT & DARK MODE
+   ========================================================================== */
+
+/* Tombol Toggle Tema (Dark Mode) */
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 14px;
+  min-height: 44px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Pengaturan Visibilitas Foto Profil (About) */
+.foto-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 160px;
+}
+
+.foto-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-sm {
+  min-height: 44px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* ==========================================================================
+   10b. ANIMASI (Style & Animation lewat CSS)
+   Keyframe fadeIn dipakai untuk card skill dan notifikasi form.
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* ==========================================================================
+   DARK MODE
+   Background hitam (#000000) dan font putih (#ffffff) sesuai spesifikasi
+   ========================================================================== */
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffffff;
+}
+
+body.dark-mode p {
+  color: #e2e8f0;
+}
+
+body.dark-mode .intro-text {
+  color: #f8fafc;
+}
+
+body.dark-mode header {
+  background-color: #09090b;
+  border-bottom: 1px solid #27272a;
+}
+
+body.dark-mode .page-header {
+  border-bottom-color: #27272a;
+}
+
+body.dark-mode footer {
+  background-color: #09090b;
+  border-top: 1px solid #27272a;
+}
+
+body.dark-mode footer p {
+  color: #a1a1aa;
+}
+
+body.dark-mode .card,
+body.dark-mode #profil,
+body.dark-mode .about-flex,
+body.dark-mode #form-pesan,
+body.dark-mode .contact-info-card {
+  background-color: #121212;
+  border-color: #27272a;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .card:hover {
+  border-color: #3f3f46;
+}
+
+body.dark-mode .card-desc {
+  color: #cbd5e1;
+}
+
+body.dark-mode .card-tags {
+  border-top-color: #27272a;
+}
+
+body.dark-mode .tag {
+  background: #27272a;
+  color: #f4f4f5;
+}
+
+body.dark-mode .badge-status {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+body.dark-mode .btn-outline {
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+body.dark-mode .btn-outline:hover {
+  background: #1e293b;
+  color: #93c5fd;
+}
+
+body.dark-mode .biodata-grid {
+  background-color: #18181b;
+  border-color: #27272a;
+}
+
+body.dark-mode .biodata-label {
+  color: #93c5fd;
+}
+
+body.dark-mode .biodata-value {
+  color: #ffffff;
+}
+
+/* Skill list di dark mode */
+body.dark-mode .skill-item {
+  background-color: #18181b;
+  border-color: #27272a;
+}
+
+body.dark-mode .skill-item h4 {
+  color: #93c5fd;
+}
+
+body.dark-mode .skill-item p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .skill-error {
+  color: #fca5a5;
+}
+
+body.dark-mode .form-group label {
+  color: #f4f4f5;
+}
+
+body.dark-mode .form-control {
+  background-color: #18181b;
+  color: #ffffff;
+  border-color: #3f3f46;
+}
+
+body.dark-mode .form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+}
+
+body.dark-mode .contact-label {
+  color: #a1a1aa;
+}
+
+body.dark-mode .contact-value {
+  color: #ffffff;
+}
+
+body.dark-mode .social-btn {
+  background-color: #27272a;
+  color: #f4f4f5;
+}
+
+body.dark-mode .social-btn:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+body.dark-mode .btn-theme-toggle {
+  background-color: #27272a;
+  border-color: #3f3f46;
+  color: #fef08a;
+}
+
+body.dark-mode .btn-theme-toggle:hover {
+  background-color: #3f3f46;
+  color: #ffffff;
+}
+
+body.dark-mode #status-pesan.sukses {
+  background: #052e16;
+  color: #86efac;
+  border-color: #166534;
+}
+
+body.dark-mode #status-pesan.error {
+  background: #450a0a;
+  color: #fca5a5;
+  border-color: #991b1b;
+}
