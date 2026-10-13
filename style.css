@@ -1,6 +1,3 @@
-/* =========================
-   1. VARIABEL & RESET
-   ========================= */
 :root {
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
@@ -25,7 +22,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Gunakan font bawaan sistem agar loading cepat dan tidak terlihat "dari generator" */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--bg);
@@ -41,9 +37,6 @@ img {
   display: block;
 }
 
-/* =========================
-   2. TIPOGRAFI & UMUM
-   ========================= */
 h1,
 h2,
 h3 {
@@ -116,9 +109,6 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
-/* =========================
-   3. LAYOUT UTAMA
-   ========================= */
 header {
   background: #0f172a;
   position: sticky;
@@ -147,10 +137,6 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* =========================
-   3b. PAGE HEADER (judul + deskripsi tiap halaman)
-   Header di dalam main, tanpa background gelap seperti navbar.
-   ========================= */
 .page-header {
   background: transparent;
   position: static;
@@ -170,9 +156,6 @@ footer p {
   margin-bottom: 0;
 }
 
-/* =========================
-   4. NAVBAR
-   ========================= */
 .navbar {
   max-width: 1080px;
   margin: 0 auto;
@@ -219,9 +202,6 @@ footer p {
   background: var(--primary);
 }
 
-/* =========================
-   5. HOME HERO
-   ========================= */
 #profil,
 .about-flex {
   display: flex;
@@ -304,9 +284,6 @@ footer p {
   color: var(--primary-hover);
 }
 
-/* =========================
-   6. PROJECT CARD
-   ========================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -364,9 +341,6 @@ footer p {
   border-radius: 6px;
 }
 
-/* =========================
-   7. ABOUT PAGE
-   ========================= */
 .about-content {
   flex: 1;
 }
@@ -391,7 +365,6 @@ footer p {
   color: var(--text);
 }
 
-/* Daftar skill (diisi lewat AJAX dari data.json) */
 .skill-list {
   list-style: none;
   display: grid;
@@ -444,9 +417,6 @@ footer p {
   color: #dc2626;
 }
 
-/* =========================
-   8. CONTACT PAGE
-   ========================= */
 #contact-section {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -582,9 +552,6 @@ textarea.form-control {
   color: #ffffff;
 }
 
-/* =========================
-   9. RESPONSIVE
-   ========================= */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -666,11 +633,7 @@ textarea.form-control {
   }
 }
 
-/* ==========================================================================
-   10. INTERAKSI JAVASCRIPT & DARK MODE
-   ========================================================================== */
 
-/* Tombol Toggle Tema (Dark Mode) */
 .btn-theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -693,14 +656,12 @@ textarea.form-control {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Ikon Material Symbols di tombol tema */
 .btn-theme-toggle .material-symbols-outlined {
   font-size: 18px;
   line-height: 1;
   vertical-align: -3px;
 }
 
-/* Pengaturan Visibilitas Foto Profil (About) */
 .foto-wrapper {
   display: flex;
   flex-direction: column;
@@ -724,10 +685,6 @@ textarea.form-control {
   text-align: center;
 }
 
-/* ==========================================================================
-   10b. ANIMASI (Style & Animation lewat CSS)
-   Keyframe fadeIn dipakai untuk card skill dan notifikasi form.
-   ========================================================================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -743,10 +700,6 @@ textarea.form-control {
   animation: fadeIn 0.4s ease forwards;
 }
 
-/* ==========================================================================
-   DARK MODE
-   Background hitam (#000000) dan font putih (#ffffff) sesuai spesifikasi
-   ========================================================================== */
 body.dark-mode {
   background-color: #000000;
   color: #ffffff;
@@ -839,7 +792,6 @@ body.dark-mode .biodata-value {
   color: #ffffff;
 }
 
-/* Skill list di dark mode */
 body.dark-mode .skill-item {
   background-color: #18181b;
   border-color: #27272a;

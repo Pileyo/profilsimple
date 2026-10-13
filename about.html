@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Pileyo Hananim Zamonokhi Bate'e</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts Icons untuk ikon profesional -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dark_mode,light_mode">
 </head>
 <body>
 
-    <!-- Navigasi utama (Flexbox) -->
     <header>
         <nav class="navbar">
             <div class="nav-brand">Pileyo Hananim Zamonokhi Bate'e<span>.Portfolio</span></div>
@@ -26,15 +24,12 @@
     </header>
 
     <main>
-        <!-- Header halaman: judul + deskripsi singkat (syarat soal UTS) -->
         <header class="page-header">
             <h1>Tentang Saya</h1>
             <p>Halaman ini berisi perkenalan, biodata, daftar skill, dan tautan media sosial saya.</p>
         </header>
 
-        <!-- Halaman About: Menggunakan Flexbox (.about-flex) -->
         <section id="about-section" class="about-flex">
-            <!-- Kontainer Foto Profil & Tombol Pengatur Visibilitas -->
             <div class="foto-wrapper">
                 <img src="foto.jpg" alt="Foto Profil Pileyo Hananim Zamonokhi Bate'e" class="foto-profil" id="foto-profil">
                 <div class="foto-actions">
@@ -49,7 +44,6 @@
                     Halo, perkenalkan saya Pileyo Hananim Zamonokhi Bate'e. Saya adalah mahasiswa Program Studi Manajemen Informatika yang sedang menempuh perkuliahan Pemrograman Web. Saya antusias mendalami pembuatan website modern yang fungsional dan terstruktur.
                 </p>
 
-                <!-- Biodata Lengkap (Nama, NIM, Jurusan, Hobi) -->
                 <div class="biodata-grid">
                     <div class="biodata-label">Nama Lengkap</div>
                     <div class="biodata-value">: Pileyo Hananim Zamonokhi Bate'e</div>
@@ -64,7 +58,6 @@
                     <div class="biodata-value">: Coding, Membaca Buku, dan Bermain Game</div>
                 </div>
 
-                <!-- Daftar skill, diisi lewat JavaScript (AJAX dari data.json) -->
                 <h3>Skill Saya</h3>
                 <p>Daftar skill berikut dimuat otomatis dari file data.json memakai fetch().</p>
                 <ul id="daftar-skill" class="skill-list">
@@ -83,12 +76,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Pileyo Hananim Zamonokhi Bate'e. Seluruh hak cipta dilindungi. Tugas Pemrograman Web.</p>
     </footer>
 
-    <!-- Script Logika JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

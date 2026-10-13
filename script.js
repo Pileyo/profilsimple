@@ -1,14 +1,4 @@
-/**
- * Tugas UTS Pemrograman Web - JavaScript
- * Lima fitur JavaScript yang diimplementasikan:
- * 1. Event Handling   : klik tombol dark mode, tombol sembunyikan/tampilkan foto, submit form.
- * 2. DOM Manipulation : mengubah isi tombol, membuat daftar skill, menampilkan pesan status.
- * 3. Style & Animation: menambah/menghapus class (dark-mode, input-error, fade-in) dan animasi CSS.
- * 4. Form Validation  : memvalidasi nama, email, dan pesan pada contact.html.
- * 5. AJAX             : mengambil data.json dengan fetch() lalu menampilkannya di about.html.
- */
 
-// Jalankan semua fitur setelah struktur HTML selesai dimuat.
 document.addEventListener("DOMContentLoaded", () => {
     initDarkMode();
     initAboutFoto();
@@ -16,11 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initSkillAjax();
 });
 
-/* ==========================================================================
-   1. FITUR DARK MODE - Event Handling + Style (Semua Halaman)
-   ========================================================================== */
 
-// Menyiapkan tema saat halaman pertama dibuka.
 function initDarkMode() {
     const savedTheme = localStorage.getItem("theme");
     const isDark = savedTheme === "dark";
@@ -35,11 +21,9 @@ function initDarkMode() {
 
     const btnDarkMode = document.getElementById("btn-dark-mode");
     if (btnDarkMode) {
-        // Event handling: tombol diklik lalu tema berganti.
         btnDarkMode.addEventListener("click", toggleDarkMode);
     }
 
-    // Sinkronisasi tema antar tab browser yang terbuka.
     window.addEventListener("storage", (event) => {
         if (event.key === "theme") {
             const newTheme = event.newValue;
@@ -54,14 +38,12 @@ function initDarkMode() {
     });
 }
 
-// Mengganti tema gelap/terang saat tombol diklik.
 function toggleDarkMode() {
     const isDark = document.body.classList.toggle("dark-mode");
     localStorage.setItem("theme", isDark ? "dark" : "light");
     updateDarkModeButton(isDark);
 }
 
-// DOM manipulation: mengubah teks dan ikon tombol sesuai tema aktif.
 function updateDarkModeButton(isDark) {
     const btnDarkMode = document.getElementById("btn-dark-mode");
     if (!btnDarkMode) return;
@@ -75,11 +57,7 @@ function updateDarkModeButton(isDark) {
     }
 }
 
-/* ==========================================================================
-   2. FITUR FOTO PROFIL - Event Handling + Style (Halaman Tentang Kami)
-   ========================================================================== */
 
-// Menghubungkan tombol dengan fungsi sembunyikan/tampilkan foto.
 function initAboutFoto() {
     const btnSembunyi = document.getElementById("btn-sembunyi");
     const btnTampil = document.getElementById("btn-tampil");
@@ -93,7 +71,6 @@ function initAboutFoto() {
     }
 }
 
-// Style manipulation: mengubah properti display foto menjadi none.
 function sembunyikanFoto() {
     const foto = document.getElementById("foto-profil");
     if (foto) {
@@ -101,7 +78,6 @@ function sembunyikanFoto() {
     }
 }
 
-// Style manipulation: mengembalikan foto agar terlihat lagi.
 function tampilkanFoto() {
     const foto = document.getElementById("foto-profil");
     if (foto) {
@@ -109,18 +85,13 @@ function tampilkanFoto() {
     }
 }
 
-/* ==========================================================================
-   3. FITUR FORM KONTAK - Form Validation + DOM Manipulation (Halaman Kontak)
-   ========================================================================== */
 
-// Menyiapkan event submit dan membersihkan tanda error saat pengguna mengetik.
 function initContactForm() {
     const formPesan = document.getElementById("form-pesan");
     if (formPesan) {
         formPesan.addEventListener("submit", handleKirimPesan);
     }
 
-    // Hapus style error secara real-time saat pengguna mengisi input.
     const inputIds = ["nama", "email", "pesan"];
     inputIds.forEach((id) => {
         const el = document.getElementById(id);
@@ -134,13 +105,11 @@ function initContactForm() {
     });
 }
 
-// Memeriksa format email sederhana memakai pola teks.
 function emailValid(email) {
     const pola = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pola.test(email);
 }
 
-// Validasi form lalu tampilkan pesan sukses atau error.
 function handleKirimPesan(event) {
     if (event) {
         event.preventDefault();
@@ -158,7 +127,6 @@ function handleKirimPesan(event) {
     const valEmail = inputEmail.value.trim();
     const valPesan = inputPesan.value.trim();
 
-    // Validasi 1: semua kolom wajib diisi.
     if (valNama === "" || valEmail === "" || valPesan === "") {
         statusDiv.className = "error fade-in";
         statusDiv.textContent = "Error: Semua kolom (nama, email, dan pesan) wajib diisi!";
@@ -169,7 +137,6 @@ function handleKirimPesan(event) {
         return false;
     }
 
-    // Validasi 2: format email harus benar.
     if (!emailValid(valEmail)) {
         statusDiv.className = "error fade-in";
         statusDiv.textContent = "Error: Format email tidak valid (contoh: nama@domain.com).";
@@ -177,7 +144,6 @@ function handleKirimPesan(event) {
         return false;
     }
 
-    // Validasi 3: pesan minimal 10 karakter.
     if (valPesan.length < 10) {
         statusDiv.className = "error fade-in";
         statusDiv.textContent = "Error: Pesan terlalu pendek, minimal 10 karakter.";
@@ -185,16 +151,13 @@ function handleKirimPesan(event) {
         return false;
     }
 
-    // Semua valid: hilangkan tanda error pada input.
     inputNama.classList.remove("input-error");
     inputEmail.classList.remove("input-error");
     inputPesan.classList.remove("input-error");
 
-    // DOM manipulation + animasi fade-in: tampilkan notifikasi sukses.
     statusDiv.className = "sukses fade-in";
     statusDiv.textContent = "Pesan berhasil dikirim. Terima kasih, " + valNama + "!";
 
-    // Kosongkan form setelah berhasil divalidasi.
     if (formPesan) {
         formPesan.reset();
     }
@@ -202,19 +165,13 @@ function handleKirimPesan(event) {
     return false;
 }
 
-/* ==========================================================================
-   4. FITUR AJAX - fetch() data.json (Halaman Tentang Kami)
-   ========================================================================== */
 
-// Mengambil data skill dari data.json lalu menampilkannya di halaman.
 function initSkillAjax() {
     const daftarSkill = document.getElementById("daftar-skill");
-    if (!daftarSkill) return; // Hanya berjalan di halaman yang punya elemen ini.
+    if (!daftarSkill) return;
 
-    // fetch() mengambil file JSON dari server.
     fetch("data.json")
         .then((response) => {
-            // Jika file tidak ditemukan atau server error, lempar error.
             if (!response.ok) {
                 throw new Error("Gagal memuat data (status " + response.status + ")");
             }
@@ -224,7 +181,6 @@ function initSkillAjax() {
             tampilkanSkill(data, daftarSkill);
         })
         .catch((error) => {
-            // Penanganan error: tampilkan pesan ramah jika fetch gagal.
             daftarSkill.innerHTML = "";
             const li = document.createElement("li");
             li.className = "skill-error";
@@ -233,7 +189,6 @@ function initSkillAjax() {
         });
 }
 
-// DOM manipulation: membuat elemen daftar skill dari data JSON.
 function tampilkanSkill(data, wadah) {
     wadah.innerHTML = "";
 
@@ -245,12 +200,11 @@ function tampilkanSkill(data, wadah) {
         return;
     }
 
-    // Perulangan membuat satu kartu skill untuk tiap data.
     for (let i = 0; i < data.length; i++) {
         const skill = data[i];
 
         const li = document.createElement("li");
-        li.className = "skill-item fade-in"; // class fade-in memicu animasi CSS.
+        li.className = "skill-item fade-in";
 
         const judul = document.createElement("h4");
         judul.textContent = skill.nama;
