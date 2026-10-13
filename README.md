@@ -1,7 +1,7 @@
 # Website Profil Pribadi - Tugas UTS Pemrograman Web
 
-**Nama:** Leo  
-**NIM:** [NIM]  
+**Nama:** Pileyo Hananim Zamonokhi Bate'e
+**NIM:** 25091397045 
 **Mata Kuliah:** Pemrograman Web - Semester 3  
 **Program Studi:** Manajemen Informatika
 
